@@ -10,7 +10,100 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <header style={headerStyle}>
+          <div style={logoContainerStyle}>
+            <div style={logoStyle}>My Website</div>
+          </div>
+          <nav>
+            <ul style={navListStyle}>
+              <li style={navItemStyle}><a href="#">Home</a></li>
+              <li style={navItemStyle}><a href="#">About</a></li>
+              <li style={navItemStyle}><a href="#">Services</a></li>
+              <li style={navItemStyle}><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>{children}</main>
+
+        <footer style={footerStyle}>
+          <div style={footerContainerStyle}>
+            <p style={footerTextStyle}>© 2025 My Website. All rights reserved.</p>
+            <div style={socialLinksStyle}>
+              <a href="#" style={socialLinkStyle}>Facebook</a>
+              <a href="#" style={socialLinkStyle}>Twitter</a>
+              <a href="#" style={socialLinkStyle}>LinkedIn</a>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   )
 }
+
+const headerStyle: React.CSSProperties = {
+  backgroundColor: '#1a202c',  // Dark color for a professional look
+  color: 'white',
+  padding: '20px 40px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+}
+
+const logoContainerStyle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+}
+
+const logoStyle: React.CSSProperties = {
+  fontSize: '28px',
+  fontWeight: 'bold',
+  letterSpacing: '1px',
+}
+
+const navListStyle: React.CSSProperties = {
+  listStyleType: 'none',
+  display: 'flex',
+  margin: 0,
+  padding: 0,
+}
+
+const navItemStyle: React.CSSProperties = {
+  margin: '0 20px',
+}
+
+const footerStyle: React.CSSProperties = {
+  backgroundColor: '#2d3748', // Darker background for footer
+  color: 'white',
+  textAlign: 'center',
+  padding: '40px 20px',
+  marginTop: '50px',
+  boxShadow: '0 -2px 4px rgba(0, 0, 0, 0.1)',
+}
+
+const footerContainerStyle: React.CSSProperties = {
+  maxWidth: '1200px',
+  margin: '0 auto',
+}
+
+const footerTextStyle: React.CSSProperties = {
+  marginBottom: '20px',
+  fontSize: '14px',
+}
+
+const socialLinksStyle: React.CSSProperties = {
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '20px',
+}
+
+const socialLinkStyle: React.CSSProperties = {
+  color: 'white',
+  textDecoration: 'none',
+  fontSize: '16px',
+  fontWeight: '500',
+  transition: 'color 0.3s',
+}
+
